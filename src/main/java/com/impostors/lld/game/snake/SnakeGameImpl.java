@@ -43,7 +43,7 @@ public class SnakeGameImpl implements SnakeGame {
     }
 
     private boolean checkIfFoodConsumed(Direction direction) {
-        SnakeSection headSection = snakePosition.snakeSections().getFirst();
+        SnakeSection headSection = snakePosition.snakeSections().get(0);
         headSection.move(direction);
         if (foodPositions.contains(headSection.getHead())) {
             foodPositions.remove(headSection.getHead());
