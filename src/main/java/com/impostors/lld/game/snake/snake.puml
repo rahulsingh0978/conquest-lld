@@ -1,0 +1,11 @@
+@startuml
+Player->Game: init(x, y)
+Game-->Game: pos=0,0 dir:r
+loop
+Player->Game: move(l/r/u/d)
+Game-->Game: new pos = pos + dir vr
+alt if new pos invalid
+Game->Player: end game
+end
+end loop
+@enduml
